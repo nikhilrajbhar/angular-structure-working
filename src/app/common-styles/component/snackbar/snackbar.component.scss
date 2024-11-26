@@ -1,0 +1,22 @@
+.snackbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    .snackbar-content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .mat-icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .close-icon{
+        cursor: pointer;
+    }
+}
+

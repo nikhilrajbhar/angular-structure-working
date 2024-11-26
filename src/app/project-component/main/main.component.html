@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="fullname" name="name" id="name">
+            <mat-hint class="red" *ngIf="!form.get('fullname')?.valid && submitted">Enter full name</mat-hint>
+        </mat-form-field><br />
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" name="email" id="email">
+        </mat-form-field><br />
+        <mat-form-field>
+            <mat-label>Number</mat-label>
+            <input matInput type="text" maxlength="10" [value]="form.controls['number'].value | phonenumber" formControlName="number" name="number" id="number">
+            <mat-hint *ngIf="form.controls['number']?.errors['yearInvalid']"> kljasd</mat-hint>
+        </mat-form-field><br />
+        <mat-form-field>
+            <mat-label>password</mat-label>
+            <input matInput type="password" formControlName="password" name="password" id="password">
+        </mat-form-field><br />
+        <mat-form-field>
+            <mat-label>Confirm password</mat-label>
+            <input matInput type="password" formControlName="cpassword" name="cpassword" id="cpassword">
+        </mat-form-field><br />
+        <button type="submit">Submit</button>
+        <button (click)="reset()">Reset</button>
+        <button (click)="spinner()">check-spinner</button>
+        <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+
+</form>
